@@ -1,0 +1,66 @@
+{%extends 'nucleo/base.html'%}
+
+{%block titulo%}Resultados{%endblock%}
+{%block background%}{%load static%}{% static 'nucleo/img/home-bg.jpg' %}{%endblock%}
+{%block Cabecera%}
+{%endblock%}
+{%block content%}
+{% load leaflet_tags %}
+<html>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <style>
+
+            .leaflet-container {  /* all maps */
+                width:  800px;
+                height: 600px;
+            }
+        
+            #specialbigmap {
+                height: 800px;
+            }
+        
+        </style>
+  <head></head>
+  <body>
+    <script type="text/javascript">
+        function map_init_basic (map, options) {
+            {% for marcadores in evento %}
+                L.marker([{{marcadores.Latitud}},{{marcadores.Longitud}}]).addTo(map);
+            {%endfor%}
+        }
+    </script>
+    <table border="1">
+        <tr>
+                <td>Tipo</td>
+                <td>Material</td>
+                <td>Fecha_inicio</td>
+                <td>Fecha_fin</td>
+                <td>Fuente</td>
+                <td>creado</td>
+                <td>actualizado</td>
+                <td>Estado</td>
+                <td>Municipio</td>
+                <td>Longitud</td>
+                <td>Latitud</td>
+        </tr>
+        {% for e in evento %}
+        <tr>
+                <td>{{e.Tipo_evento}}</td>
+                <td>{{e.Tipo_material}}</td>
+                <td>{{e.Fecha_inicio}}</td>
+                <td>{{e.Fecha_fin}}</td>
+                <td>{{e.Fuente}}</td>
+                <td>{{e.created}}</td>
+                <td>{{e.updated}}</td>
+                <td>{{e.Estado}}</td>
+                <td>{{e.Municipio}}</td>
+                <td>{{e.Longitud}}</td>
+                <td>{{e.Latitud}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    {% leaflet_map "mapamarcado" callback="window.map_init_basic" %}
+  </body>
+</html>
+{%endblock%}

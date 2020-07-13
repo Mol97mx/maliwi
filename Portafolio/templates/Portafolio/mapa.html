@@ -1,0 +1,38 @@
+{%extends 'nucleo/base.html'%}
+
+{%block titulo%}Resultados{%endblock%}
+{%block background%}{%load static%}{% static 'nucleo/img/home-bg.jpg' %}{%endblock%}
+{%block Cabecera%}
+{%endblock%}
+{%block content%}
+{% load leaflet_tags %}
+<html>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <style>
+
+            .leaflet-container {  /* all maps */
+                width:  800px;
+                height: 600px;
+            }
+        
+            #specialbigmap {
+                height: 800px;
+            }
+        
+        </style>
+  <head></head>
+  <body>
+    <script type="text/javascript">
+        function map_init_basic (map, options) {
+            L.marker([19.7006,-101.186]).addTo(map);
+            L.marker([19.4116,-102.05644]).addTo(map);
+            L.marker([20.8833,-102.3]).addTo(map);
+        }
+    </script>
+
+    {% leaflet_map "mapamarcado" callback="window.map_init_basic" %}
+
+  </body>
+</html>
+{%endblock%}

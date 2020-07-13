@@ -1,0 +1,20 @@
+{%extends 'nucleo/base.html'%}
+
+{%block titulo%}Acerca de{%endblock%}
+{%block background%}{%load static%}{% static 'nucleo/img/about-bg.jpg' %}{%endblock%}
+{%block Cabecera%}
+<h1>Acerca de</h1>
+<span class="subheading">Mapa Inventario</span>
+{%endblock%}
+{%block content%}
+<div class="row">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{% static 'nucleo/img/avatar.jpg' %}" alt="">
+    </div>
+    <div class="col-lg-7 col-md-8">
+    <h2 class="section-heading">Mexican Automatic Landslide Inventory Based On Web Information</h2>   
+    <p>Los Procesos de Remoción en Masa (PRM) constituyen uno de los peligros geológicos que más afectan a la población, particularmente durante precipitaciones atípicas o sismos de gran magnitud. El mapa inventario de PRM constituye el insumo fundamental para el diseño posterior de instrumentos de mitigación del impacto negativo de este fenómeno. Es un documento cartográfico que muestra la distribución espacial y temporal de laderas inestables en una determinada área geográfica. Permite zonificar la susceptibilidad, identificar elementos expuestos, evaluar la vulnerabilidad y calcular el riesgo por PRM. Los mapas inventarios tradicionalmente resultan de la interpretación de geoformas asociadas a la inestabilidad de laderas a partir de imágenes de percepción remota y modelos digitales de elevación; proceso que implica un alto consumo de tiempo, recursos humanos y económicos, y baja posibilidad de actualización. El presente trabajo tiene como objetivo desarrollar una serie de aplicaciones computacionales que permitan la conformación de un mapa inventario de PRM, a partir de la recopilación automática y en tiempo real de información generada en los medios informativos locales vía web. Estas aplicaciones clasifican la información y alimentan una base de datos que se puede acezar de manera ágil a través de una plataforma web que pone a su disposición el filtrado de dichos datos, y su despliegue en formato tabular y gráfica para la fácil comprensión y ubicación de los eventos a los cuales se hace referencia.</p>
+    <p></p>
+    </div>
+</div>
+{%endblock%}

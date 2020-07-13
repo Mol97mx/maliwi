@@ -1,0 +1,24 @@
+{%extends 'nucleo/base.html'%}
+
+{%block titulo%}Portafolio{%endblock%}
+{%block background%}{%load static%}{% static 'nucleo/img/portfolio-bg.jpg' %}{%endblock%}
+{%block Cabecera%}
+<h1>Portafolio</h1>
+<span class="subheading">Currículo</span>
+{%endblock%}
+
+{%block content%}
+<!--
+    {% for pro in nombre %}
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{{pro.imagen}}" alt="">
+        </div>
+    <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">{{pro.titulo}}</h2>   
+        <p>{{pro.descripcion}}</p>
+        <p><a href="http://google.com">Más información</a></p>
+        </div>
+    </div>
+{% endfor %}-->
+{%endblock%}
